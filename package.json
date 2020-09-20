@@ -32,6 +32,7 @@
     "react-scripts": "3.4.3",
     "react-scrollspy-nav": "^1.2.4",
     "react-stockcharts": "^0.7.8",
+    "react-window-size-listener": "^1.5.4",
     "reactstrap": "^8.5.1",
     "reactstrap-scrollspy": "^0.1.1"
   },

@@ -1,22 +1,53 @@
 import React,{Fragment} from 'react';
 import Plot from 'react-plotly.js';
+import { withWindowSizeListener } from 'react-window-size-listener';
 import Loading from './LoadingComponent';
+import '../App.css';
 
 
 class Chart extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			loading:false,
+            loading:false,
+            width:600,
+            height:400,
 		}
-	}
+    }
+    
+    updateDimensions() {
+        if(window.innerWidth < 700 && window.innerHeight >550) {
+        this.setState({ width: 550, height: 400 });
+        console.log('this is being called less than 700');
+        }
+        if(window.innerWidth < 550) {
+            this.setState({ width: 450, height: 380 });
+            console.log('this is being called less than 550');
+            }
+        else {
+        // let update_width  = window.innerWidth/3;
+        // let update_height = Math.round(update_width/1.5);
+        // console.log("after resize width",update_width);
+        // console.log("after resize height",update_height);
+        // this.setState({ width: update_width, height: update_height });
+        }
+    }
+    componentDidMount() {
+        this.updateDimensions();
+        window.addEventListener("resize", this.updateDimensions.bind(this));
+        
+    }
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.updateDimensions.bind(this));
+    }
+
     render() {
 		console.log(this.props);
 		
 		{
         return(
             
-
+            
         <Plot
             data={[
                 {
@@ -44,23 +75,27 @@ class Chart extends React.Component {
                 paper_bgcolor:'#121212',
     		plot_bgcolor:'#121212',
                     color:'#121212',
-                    width: 530,
-                    height: 400,
-                    boxShadow:10,
+                    width:this.state.width,
+                    height:this.state.height,
+                    position:'inherit',
                     
                     title: this.props,}}
+
+                    
                     />
 
 
         );
 
-    
+        
 
     
     
     };
 
+
     }
+    
 }      
 
 

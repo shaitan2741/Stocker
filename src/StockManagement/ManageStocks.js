@@ -198,7 +198,7 @@ class Stocks extends Component {
                 <div className="jumbotron jumbotron-fluid bg-dark text-light">
                     <div className="container">
                         <h2 className="display-3">React Stock Market</h2>
-                            <p className="lead">A simple stock market API app</p>
+                            <p className="lead">A simple stock market API app hello</p>
                                 <div className="row">
                                     <div className="col input-group">
                                         <Input className="inputBrand" type="select" name="carbrand" id="carBrand" onChange={this.handleChange} style={{background_color:'red'}} >
@@ -217,11 +217,11 @@ class Stocks extends Component {
 
                 <div className="container-fluid" >
                     <div className="row ">
-                        <div className="col-md-6 " style={{boxShadow:"rgba(100,9,56,0.6)",color:"red"}}>
+                        <div className="col-md-6 col-xs-12 col-sm-12 graph_container" >
                             {loading ?<Loading /> :<Chart x_axis={this.state.x_val} y_axis={this.state.y_val} loader={this.state.loading}  />}
                         </div>
                     
-                    <div className="col-md-6 "> 
+                    <div className="col-md-6 col-xs-12 col-sm-12 "> 
                         <h2 style={{align: 'left' ,color:"white",style:'underline'}}>{this.state.initial_Name}</h2>
                                     
                                             <hr  style={{background: "grey",}} />
