@@ -217,11 +217,11 @@ class Stocks extends Component {
 
                 <div className="container-fluid" >
                     <div className="row ">
-                        <div className="col-md-6 col-xs-12 col-sm-12 graph_container" >
+                        <div className="col-md-7 col-xs-12 col-sm-12 graph_container" >
                             {loading ?<Loading /> :<Chart x_axis={this.state.x_val} y_axis={this.state.y_val} loader={this.state.loading}  />}
                         </div>
                     
-                    <div className="col-md-6 col-xs-12 col-sm-12 "> 
+                    <div className="col-md-5 col-xs-12 col-sm-12 "> 
                         <h2 style={{align: 'left' ,color:"white",style:'underline'}}>{this.state.initial_Name}</h2>
                                     
                                             <hr  style={{background: "grey",}} />

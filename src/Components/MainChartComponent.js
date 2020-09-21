@@ -10,27 +10,66 @@ class Chart extends React.Component {
 		super(props);
 		this.state = {
             loading:false,
-            width:600,
-            height:400,
+            width:2000,
+            height:1500,
 		}
     }
     
     updateDimensions() {
-        if(window.innerWidth < 700 && window.innerHeight >550) {
-        this.setState({ width: 550, height: 400 });
-        console.log('this is being called less than 700');
+        // if(window.innerWidth < 700 ) {
+        // this.setState({ width: 550, height: 400 });
+        // console.log('this is being called less than 700');
+        // }
+        // if(window.innerWidth <=550) {
+        //     console.log("current width",window.innerWidth);
+        //     this.setState({ width: window.innerWidth-30, height: window.innerHeight-50 });
+        //     console.log('this is being called less than 550');
+        //     console.log('this is new')
+        //     }
+        // else {
+        //     console.log('no change is required');
+        //     console.log(this.state.width);
+        //     this.setState({width:600,height:400})
+        // // let update_width  = window.innerWidth/3;
+        // // let update_height = Math.round(update_width/1.5);
+        // // console.log("after resize width",update_width);
+        // // console.log("after resize height",update_height);
+        // // this.setState({ width: update_width, height: update_height });
+        // }
+        if(window.innerWidth >1500){
+            this.setState({ width:700,height: 550})
+            console.log('very big width',this.state.width,this.state.height);
+            
         }
-        if(window.innerWidth < 550) {
-            this.setState({ width: 450, height: 380 });
-            console.log('this is being called less than 550');
-            }
-        else {
-        // let update_width  = window.innerWidth/3;
-        // let update_height = Math.round(update_width/1.5);
-        // console.log("after resize width",update_width);
-        // console.log("after resize height",update_height);
-        // this.setState({ width: update_width, height: update_height });
+        if(window.innerWidth >1112){
+            this.setState({ width:600,height: 480})
+            console.log('window width is extremyl appropiate',this.state.width,this.state.height);
+            
         }
+        if(window.innerWidth >=1000 ){
+            this.setState({ width:550,height: 450})
+            console.log('window width is appropiate',window.innerWidth);
+            console.log('window',this.state.width,this.state.height);
+
+            
+
+        }
+        else if(window.innerWidth<1099 && window.innerWidth>930){
+            console.log('not appropiate size',window.innerWidth);
+            this.setState({ width:550,height: 450})
+            console.log(this.state.width,this.state.height);
+        }
+        else if(window.innerWidth<930 && window.innerWidth>750){
+            console.log('not appropiate size',window.innerWidth);
+            this.setState({ width:400,height: 450})
+            console.log(this.state.width,this.state.height);
+        }
+        else{
+            this.setState({ width:window.innerWidth-50,height: 400})
+            console.log(this.state.width,this.state.height);
+        }
+
+
     }
     componentDidMount() {
         this.updateDimensions();
