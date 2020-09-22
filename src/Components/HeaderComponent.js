@@ -23,7 +23,7 @@ return (
     <Navbar className="navbar  navbar-dark "  expand="md">
         <NavbarBrand href="/"><div className="logo"></div></NavbarBrand>
         <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
+        <Collapse isOpen={isOpen} navbar style={{color:'red'}}>
         <Nav className="ml-auto" navbar>
             <NavItem>
             <NavLink href="/home/" className="font">Home</NavLink>
